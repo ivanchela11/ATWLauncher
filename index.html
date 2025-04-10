@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PvZ: Around the World Launcher</title>
   <style>
+    /* Общие стили */
     body {
       font-family: 'Comic Sans MS', cursive, sans-serif;
       margin: 0;
@@ -13,6 +14,33 @@
       color: #333;
       text-align: center;
       overflow-x: hidden;
+    }
+
+    /* Навигационное меню */
+    nav {
+      background: linear-gradient(135deg, #666281, #4a4664);
+      padding: 10px 20px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 1.2em;
+      padding: 10px 15px;
+      border-radius: 10px;
+      transition: all 0.3s ease;
+    }
+
+    nav a:hover {
+      background: rgba(255, 255, 255, 0.2);
+      transform: scale(1.1);
     }
 
     header {
@@ -130,31 +158,58 @@
   </style>
 </head>
 <body>
+  <!-- Навигация -->
+  <nav>
+    <a href="#download">Скачать</a>
+    <a href="#thanks">Отдельные благодарности</a>
+    <a href="#news">Новости</a>
+  </nav>
+
+  <!-- Шапка сайта -->
   <header>
     <h1>PvZ: Around the World Launcher</h1>
     <p>Самый первый лаунчер для PvZ: Around the World!</p>
   </header>
 
+  <!-- Основной контент -->
   <main>
-    <img src="assets/logo.png" alt="Логотип игры" class="logo">
+    <!-- Раздел "Скачать" -->
+    <section id="download">
+      <img src="assets/logo.png" alt="Логотип игры" class="logo">
+      <p>Добро пожаловать в лаунчер PvZ: Around the World! Здесь вы можете загрузить игру, проверить обновления и узнать последние новости.</p>
+      <div class="button-container">
+        <a href="https://github.com/YourUsername/YourRepository/releases/latest" class="button" target="_blank">Скачать игру</a>
+        <a href="https://github.com/YourUsername/YourRepository" class="button" target="_blank">GitHub</a>
+        <a href="news.html" class="button">Новости</a>
+      </div>
+    </section>
 
-    <p>Добро пожаловать в лаунчер PvZ: Around the World! Здесь вы можете загрузить игру, проверить обновления и узнать последние новости.</p>
+    <!-- Раздел "Отдельные благодарности" -->
+    <section id="thanks">
+      <h2>Отдельные благодарности</h2>
+      <p>Мы хотим поблагодарить всех участников проекта:</p>
+      <ul style="text-align: left; display: inline-block;">
+        <li><strong>Разработчики:</strong> За создание игры.</li>
+        <li><strong>Тестировщики:</strong> За помощь в улучшении качества игры.</li>
+        <li><strong>Поддержка:</strong> За активное участие в сообществе.</li>
+      </ul>
+    </section>
 
-    <div class="button-container">
-      <a href="https://github.com/idc" class="button" target="_blank">Скачать игру</a>
-      <a href="https://github.com/idc" class="button" target="_blank">GitHub</a>
-      <a href="news.html" class="button">Новости</a>
-    </div>
-
-    <div class="social-links">
-      <a href="https://t.me/pvzatw" target="_blank"><img src="assets/telegram.png" alt="Telegram" width="40"></a>
-      <a href="https://gamejolt.com/games/pvzatw/949866" target="_blank"><img src="assets/gamejolt.png" alt="GameJolt" width="40"></a>
-      <a href="https://discord.gg/SaKrzz7uku" target="_blank"><img src="assets/discord.png" alt="Discord" width="40"></a>
-    </div>
+    <!-- Раздел "Новости" -->
+    <section id="news">
+      <h2>Новости</h2>
+      <p>Здесь вы можете узнать последние обновления о проекте:</p>
+      <div class="social-links">
+        <a href="https://t.me/your_telegram_channel" target="_blank"><img src="assets/telegram.png" alt="Telegram" width="40"></a>
+        <a href="https://gamejolt.com/your_game_page" target="_blank"><img src="assets/gamejolt.png" alt="GameJolt" width="40"></a>
+        <a href="https://discord.gg/your_discord_invite" target="_blank"><img src="assets/discord.png" alt="Discord" width="40"></a>
+      </div>
+    </section>
   </main>
 
+  <!-- Футер -->
   <footer>
-    <p>&copy; 2025 PvZ: Around the World. Все права защищены.</p>
+    <p>&copy; 2023 PvZ: Around the World. Все права защищены.</p>
   </footer>
 </body>
 </html>
