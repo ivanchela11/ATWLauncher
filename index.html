@@ -31,8 +31,10 @@
       text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
     }
 
-    /* Анимация для заголовка */
-    header h1 {
+    header p {
+      font-size: 1.2em;
+      color: white;
+      margin-top: 10px;
       animation: fadeIn 2s ease-in-out;
     }
 
@@ -49,6 +51,25 @@
 
     main {
       padding: 20px;
+    }
+
+    .logo {
+      width: 300px;
+      margin: 20px auto;
+      border-radius: 20px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+      animation: fadeInLogo 2s ease-in-out;
+    }
+
+    @keyframes fadeInLogo {
+      from {
+        opacity: 0;
+        transform: scale(0.8);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
     }
 
     .button-container {
@@ -107,52 +128,20 @@
       font-size: 0.9em;
       color: white;
     }
-
-    /* Анимация появления кнопок */
-    .button-container {
-      opacity: 0;
-      transform: translateY(20px);
-      animation: fadeInButtons 1s ease-in-out forwards;
-    }
-
-    @keyframes fadeInButtons {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    /* Анимация для соцсетей */
-    .social-links {
-      opacity: 0;
-      transform: scale(0.8);
-      animation: fadeInSocial 1.5s ease-in-out forwards;
-    }
-
-    @keyframes fadeInSocial {
-      from {
-        opacity: 0;
-        transform: scale(0.8);
-      }
-      to {
-        opacity: 1;
-        transform: scale(1);
-      }
-    }
   </style>
 </head>
 <body>
   <!-- Шапка сайта -->
   <header>
     <h1>PvZ: Around the World Launcher</h1>
+    <p>Самый первый лаунчер для PvZ: Around the World!</p>
   </header>
 
   <!-- Основной контент -->
   <main>
+    <!-- Логотип игры -->
+    <img src="assets/logo.png" alt="Логотип игры" class="logo">
+
     <p>Добро пожаловать в лаунчер PvZ: Around the World! Здесь вы можете загрузить игру, проверить обновления и узнать последние новости.</p>
 
     <!-- Кнопки действий -->
@@ -164,9 +153,9 @@
 
     <!-- Ссылки на соцсети -->
     <div class="social-links">
-      <a href="https://t.me/your_telegram_channel" target="_blank">Telegram</a>
-      <a href="https://gamejolt.com/your_game_page" target="_blank">GameJolt</a>
-      <a href="https://discord.gg/your_discord_invite" target="_blank">Discord</a>
+      <a href="https://t.me/your_telegram_channel" target="_blank"><img src="assets/telegram.png" alt="Telegram" width="40"></a>
+      <a href="https://gamejolt.com/your_game_page" target="_blank"><img src="assets/gamejolt.png" alt="GameJolt" width="40"></a>
+      <a href="https://discord.gg/your_discord_invite" target="_blank"><img src="assets/discord.png" alt="Discord" width="40"></a>
     </div>
   </main>
 
@@ -174,29 +163,5 @@
   <footer>
     <p>&copy; 2023 PvZ: Around the World. Все права защищены.</p>
   </footer>
-
-  <!-- JavaScript для дополнительных анимаций -->
-  <script>
-    // Анимация заголовка при прокрутке
-    window.addEventListener('scroll', () => {
-      const header = document.querySelector('header');
-      if (window.scrollY > 50) {
-        header.style.transform = 'translateY(-50px)';
-      } else {
-        header.style.transform = 'translateY(0)';
-      }
-    });
-
-    // Анимация кнопок при наведении
-    document.querySelectorAll('.button').forEach(button => {
-      button.addEventListener('mouseenter', () => {
-        button.style.transition = 'transform 0.3s ease';
-        button.style.transform = 'scale(1.1)';
-      });
-      button.addEventListener('mouseleave', () => {
-        button.style.transform = 'scale(1)';
-      });
-    });
-  </script>
 </body>
 </html>
