@@ -4,222 +4,252 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PvZ: Around the World</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <!-- Подключение Animate.css -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
   <style>
     /* Общие стили */
     body {
-      font-family: 'Poppins', sans-serif;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
       margin: 0;
       padding: 0;
-      background: #e6f7d4;
+      background: linear-gradient(135deg, #ccb07e, #d4b894);
       color: #333;
+      text-align: center;
       overflow-x: hidden;
-      line-height: 1.6;
+      background-attachment: fixed;
     }
 
+    /* Навигационное меню */
     nav {
-      background: #6ca32f;
-      color: white;
+      background: linear-gradient(135deg, #666281, #4a4664);
       padding: 10px 20px;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
       display: flex;
       justify-content: center;
       gap: 20px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
     }
 
     nav a {
       color: white;
       text-decoration: none;
-      font-weight: 600;
-      padding: 5px 15px;
-      transition: background 0.3s;
+      font-size: 1.2em;
+      padding: 10px 15px;
+      border-radius: 10px;
+      transition: all 0.3s ease;
     }
 
     nav a:hover {
       background: rgba(255, 255, 255, 0.2);
-      border-radius: 5px;
+      transform: scale(1.1);
     }
 
     header {
-      background: linear-gradient(135deg, #4e8c3f, #3a6f2e);
-      color: white;
-      text-align: center;
-      padding: 50px 20px;
-      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+      background: linear-gradient(135deg, #666281, #4a4664);
+      padding: 20px;
+      border-bottom: 5px solid #333;
+      position: relative;
+      overflow: hidden;
     }
 
     header h1 {
-      font-size: 2.8em;
+      font-size: 3em;
       margin: 0;
+      color: white;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
     }
 
     header p {
-      margin: 10px 0 0;
       font-size: 1.2em;
+      color: white;
+      margin-top: 10px;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     main {
-      max-width: 900px;
-      margin: 30px auto;
-      padding: 0 15px;
-      text-align: center;
+      padding: 20px;
     }
 
-    h2 {
-      color: #3a6f2e;
-      font-size: 2em;
-      margin-bottom: 20px;
+    .logo {
+      width: 300px;
+      margin: 20px auto;
+      border-radius: 20px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+      animation: fadeInLogo 2s ease-in-out;
+    }
+
+    @keyframes fadeInLogo {
+      from {
+        opacity: 0;
+        transform: scale(0.8);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
     }
 
     .button-container {
-      margin: 20px 0;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 20px;
+      flex-wrap: wrap;
     }
 
     .button {
-      background: #88c241;
+      background: linear-gradient(135deg, #666281, #4a4664);
       color: white;
+      border: none;
+      padding: 15px 30px;
+      font-size: 1.2em;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
       text-decoration: none;
-      padding: 10px 20px;
-      border-radius: 5px;
-      font-weight: 600;
-      margin: 0 10px;
-      transition: background 0.3s, transform 0.2s;
     }
 
     .button:hover {
-      background: #6ca32f;
-      transform: translateY(-3px);
+      transform: scale(1.1);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
     }
 
-    section {
-      margin-bottom: 40px;
+    .social-links {
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
     }
 
-    ul {
-      list-style: none;
-      padding: 0;
-      text-align: left;
-      margin: 0 auto;
-      max-width: 600px;
+    .social-links a {
+      text-decoration: none;
+      color: #666281;
+      font-size: 2em;
+      transition: all 0.3s ease;
     }
 
-    li {
-      margin-bottom: 10px;
+    .social-links a:hover {
+      color: #4a4664;
+      transform: scale(1.2);
     }
 
     footer {
-      background: #4e8c3f;
-      color: white;
-      text-align: center;
-      padding: 20px;
-      margin-top: 40px;
+      background: linear-gradient(135deg, #666281, #4a4664);
+      padding: 10px;
+      border-top: 5px solid #333;
+      margin-top: 20px;
     }
 
     footer p {
       margin: 0;
       font-size: 0.9em;
+      color: white;
     }
 
-    /* Анимация падающих солнышек */
-    .background {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: -1;
-      overflow: hidden;
-      pointer-events: none;
-    }
-
-    .sun {
-      position: absolute;
-      width: 30px;
-      height: 30px;
-      background: radial-gradient(circle, #ffdd33 50%, #fcb800 70%);
-      border-radius: 50%;
-      animation: fall 10s linear infinite, sway 3s ease-in-out infinite;
-    }
-
-    @keyframes fall {
-      0% {
-        transform: translateY(-100%);
+    /* Адаптивный дизайн */
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
       }
-      100% {
-        transform: translateY(110vh);
-      }
-    }
 
-    @keyframes sway {
-      0%, 100% {
-        transform: translateX(0);
+      .button-container {
+        flex-direction: column;
       }
-      50% {
-        transform: translateX(15px);
+
+      .social-links {
+        flex-direction: column;
       }
     }
   </style>
 </head>
 <body>
-  <div class="background"></div>
-
+  <!-- Навигация -->
   <nav>
     <a href="#download">Скачать</a>
-    <a href="#thanks">Благодарности</a>
+    <a href="#thanks">Отдельные благодарности</a>
     <a href="#news">Новости</a>
   </nav>
 
+  <!-- Шапка сайта -->
   <header>
-    <h1>PvZ: Around the World</h1>
+    <h1 class="animate__animated animate__fadeInDown">PvZ: Around the World</h1>
     <p>Фан-игра по Растения против Зомби, в которой растения отправляются в путешествие по всему миру!</p>
   </header>
 
+  <!-- Основной контент -->
   <main>
-    <section id="download">
-      <h2>Скачать</h2>
-      <p>Загрузите игру и наслаждайтесь приключениями растений!</p>
+    <!-- Раздел "Скачать" -->
+    <section id="download" class="animate__animated animate__fadeInUp">
+      <img src="assets/logo.png" alt="Логотип игры" class="logo">
+      <p>Добро пожаловать на сайт PvZ: Around the World! Здесь вы можете загрузить игру, проверить обновления и узнать последние новости.</p>
       <div class="button-container">
-        <a href="https://github.com/YourUsername/YourRepository/releases/latest" class="button" target="_blank">Скачать игру</a>
-        <a href="https://github.com/YourUsername/YourRepository" class="button" target="_blank">GitHub</a>
+        <a href="https://github.com/YourUsername/YourRepository/releases/latest" class="button animate__animated animate__pulse" target="_blank">Скачать игру</a>
+        <a href="https://github.com/YourUsername/YourRepository" class="button animate__animated animate__pulse" target="_blank">GitHub</a>
+        <a href="news.html" class="button animate__animated animate__pulse">Новости</a>
       </div>
     </section>
 
-    <section id="thanks">
-      <h2>Благодарности</h2>
-      <ul>
-        <li><strong>Разработчик:</strong> GioTopPok</li>
-        <li><strong>Тестировщики:</strong> TELMERplayer, fractureiser, Томато и др.</li>
+    <!-- Раздел "Отдельные благодарности" -->
+    <section id="thanks" class="animate__animated animate__fadeInUp">
+      <h2>Отдельные благодарности</h2>
+      <p>Мы хотим поблагодарить всех участников проекта:</p>
+      <ul style="text-align: left; display: inline-block;">
+        <li><strong>Разработчик: GioTopPok </strong> За создание игры.</li>
+        <li><strong>Тестировщики: TELMERplayer, fractureiser, Томато, Редик, Комбораш, а, Левид, CaTronic, Чипсы с крiбом, justimatr, дори, Никитос, Герокс, Кречет Вертекс, Эмка, Иванчела</strong> За помощь в улучшении качества игры.</li>
+        <li><strong>Поддержка:</strong> За активное участие в сообществе.</li>
       </ul>
     </section>
 
-    <section id="news">
+    <!-- Раздел "Новости" -->
+    <section id="news" class="animate__animated animate__fadeInUp">
       <h2>Новости</h2>
-      <p>Следите за обновлениями на наших платформах:</p>
-      <div class="button-container">
-        <a href="https://t.me/your_telegram_channel" class="button" target="_blank">Telegram</a>
-        <a href="https://gamejolt.com/your_game_page" class="button" target="_blank">GameJolt</a>
-        <a href="https://discord.gg/your_discord_invite" class="button" target="_blank">Discord</a>
+      <p>Здесь вы можете узнать последние обновления о проекте:</p>
+      <div class="social-links">
+        <a href="https://t.me/your_telegram_channel" target="_blank"><img src="assets/telegram.png" alt="Telegram" width="40"></a>
+        <a href="https://gamejolt.com/your_game_page" target="_blank"><img src="assets/gamejolt.png" alt="GameJolt" width="40"></a>
+        <a href="https://discord.gg/your_discord_invite" target="_blank"><img src="assets/discord.png" alt="Discord" width="40"></a>
       </div>
     </section>
   </main>
 
+  <!-- Футер -->
   <footer>
     <p>&copy; 2023 PvZ: Around the World. Все права защищены.</p>
   </footer>
 
+  <!-- JavaScript для анимаций при скролле -->
   <script>
-    // Создание падающих солнышек
-    const background = document.querySelector('.background');
-    for (let i = 0; i < 30; i++) {
-      const sun = document.createElement('div');
-      sun.classList.add('sun');
-      sun.style.left = Math.random() * 100 + 'vw';
-      sun.style.animationDuration = Math.random() * 5 + 7 + 's';
-      sun.style.animationDelay = Math.random() * 3 + 's';
-      background.appendChild(sun);
-    }
+    document.addEventListener("DOMContentLoaded", () => {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("animate__animated", "animate__fadeInUp");
+          }
+        });
+      });
+
+      document.querySelectorAll("section").forEach((section) => {
+        observer.observe(section);
+      });
+    });
   </script>
 </body>
 </html>
