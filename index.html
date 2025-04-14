@@ -4,71 +4,27 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PvZ: Around the World</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <style>
     /* Общие стили */
-    body {
-      font-family: 'Comic Sans MS', cursive, sans-serif;
+    * {
       margin: 0;
       padding: 0;
-      background: linear-gradient(135deg, #ccb07e, #d4b894);
-      color: #333;
-      text-align: center;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #1e3c72, #2a5298);
+      color: white;
       overflow-x: hidden;
     }
 
-    /* Навигационное меню */
-    nav {
-      background: linear-gradient(135deg, #666281, #4a4664);
-      padding: 10px 20px;
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-size: 1.2em;
-      padding: 10px 15px;
-      border-radius: 10px;
-      transition: all 0.3s ease;
-    }
-
-    nav a:hover {
-      background: rgba(255, 255, 255, 0.2);
-      transform: scale(1.1);
-    }
-
-    header {
-      background: linear-gradient(135deg, #666281, #4a4664);
-      padding: 20px;
-      border-bottom: 5px solid #333;
-      position: relative;
-      overflow: hidden;
-    }
-
-    header h1 {
-      font-size: 3em;
-      margin: 0;
-      color: white;
-      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-    }
-
-    header p {
-      font-size: 1.2em;
-      color: white;
-      margin-top: 10px;
-      animation: fadeIn 2s ease-in-out;
-    }
-
+    /* Анимация плавного появления */
     @keyframes fadeIn {
       from {
         opacity: 0;
-        transform: translateY(-20px);
+        transform: translateY(20px);
       }
       to {
         opacity: 1;
@@ -76,138 +32,173 @@
       }
     }
 
-    main {
-      padding: 20px;
+    /* Навигация */
+    nav {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      padding: 15px;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      animation: fadeIn 1s ease-in-out;
     }
 
-    .logo {
-      width: 300px;
-      margin: 20px auto;
+    nav a {
+      text-decoration: none;
+      color: white;
+      font-weight: 600;
+      padding: 10px 20px;
       border-radius: 20px;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-      animation: fadeInLogo 2s ease-in-out;
+      transition: 0.3s;
     }
 
-    @keyframes fadeInLogo {
-      from {
-        opacity: 0;
-        transform: scale(0.8);
-      }
-      to {
-        opacity: 1;
-        transform: scale(1);
-      }
+    nav a:hover {
+      background: rgba(255, 255, 255, 0.2);
+      transform: scale(1.1);
+    }
+
+    /* Шапка сайта */
+    header {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background: linear-gradient(135deg, #2a5298, #1e3c72);
+      clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+    }
+
+    header h1 {
+      font-size: 4em;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    header p {
+      font-size: 1.5em;
+      margin-top: 20px;
+      animation: fadeIn 2.5s ease-in-out;
+    }
+
+    header .button {
+      margin-top: 40px;
+      padding: 15px 30px;
+      background: linear-gradient(135deg, #43cea2, #185a9d);
+      border: none;
+      border-radius: 30px;
+      color: white;
+      font-size: 1.2em;
+      cursor: pointer;
+      transition: 0.3s;
+      animation: fadeIn 3s ease-in-out;
+    }
+
+    header .button:hover {
+      transform: scale(1.1);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Основной контент */
+    main {
+      max-width: 1200px;
+      margin: 50px auto;
+      padding: 20px;
+      text-align: center;
+    }
+
+    section {
+      margin-top: 50px;
+      padding: 40px;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+
+    section h2 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+    }
+
+    section p {
+      font-size: 1.2em;
     }
 
     .button-container {
+      margin-top: 20px;
       display: flex;
       justify-content: center;
       gap: 20px;
-      margin-top: 20px;
     }
 
-    .button {
-      background: linear-gradient(135deg, #666281, #4a4664);
-      color: white;
-      border: none;
+    .button-container a {
       padding: 15px 30px;
+      background: linear-gradient(135deg, #43cea2, #185a9d);
+      border-radius: 30px;
+      text-decoration: none;
+      color: white;
       font-size: 1.2em;
-      border-radius: 20px;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-      text-decoration: none;
+      transition: 0.3s;
     }
 
-    .button:hover {
+    .button-container a:hover {
       transform: scale(1.1);
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-    }
-
-    .social-links {
-      margin-top: 20px;
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-    }
-
-    .social-links a {
-      text-decoration: none;
-      color: #666281;
-      font-size: 2em;
-      transition: all 0.3s ease;
-    }
-
-    .social-links a:hover {
-      color: #4a4664;
-      transform: scale(1.2);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
     }
 
     footer {
-      background: linear-gradient(135deg, #666281, #4a4664);
-      padding: 10px;
-      border-top: 5px solid #333;
-      margin-top: 20px;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      padding: 20px;
+      text-align: center;
+      margin-top: 50px;
     }
 
     footer p {
-      margin: 0;
-      font-size: 0.9em;
-      color: white;
+      font-size: 1em;
+      color: rgba(255, 255, 255, 0.7);
     }
   </style>
 </head>
 <body>
-  <!-- Навигация -->
   <nav>
     <a href="#download">Скачать</a>
-    <a href="#thanks">Отдельные благодарности</a>
+    <a href="#thanks">Благодарности</a>
     <a href="#news">Новости</a>
   </nav>
 
-  <!-- Шапка сайта -->
   <header>
     <h1>PvZ: Around the World</h1>
     <p>Фан-игра по Растения против Зомби, в которой растения отправляются в путешествие по всему миру!</p>
+    <button class="button">Узнать больше</button>
   </header>
 
-  <!-- Основной контент -->
   <main>
-    <!-- Раздел "Скачать" -->
     <section id="download">
-      <img src="assets/logo.png" alt="Логотип игры" class="logo">
-      <p>Добро пожаловать на сайт PvZ: Around the World! Здесь вы можете загрузить игру, проверить обновления и узнать последние новости.</p>
+      <h2>Скачать</h2>
+      <p>Добро пожаловать на сайт PvZ: Around the World! Здесь вы можете загрузить игру и узнать последние новости.</p>
       <div class="button-container">
-        <a href="https://github.com/YourUsername/YourRepository/releases/latest" class="button" target="_blank">Скачать игру</a>
-        <a href="https://github.com/YourUsername/YourRepository" class="button" target="_blank">GitHub</a>
-        <a href="news.html" class="button">Новости</a>
+        <a href="#">Скачать игру</a>
+        <a href="#">GitHub</a>
+        <a href="#">Новости</a>
       </div>
     </section>
 
-    <!-- Раздел "Отдельные благодарности" -->
     <section id="thanks">
       <h2>Отдельные благодарности</h2>
-      <p>Мы хотим поблагодарить всех участников проекта:</p>
-      <ul style="text-align: left; display: inline-block;">
-        <li><strong>Разработчик: GioTopPok </strong> За создание игры.</li>
-        <li><strong>Тестировщики: TELMERplayer, fractureiser, Томато, Редик, Комбораш, а, Левид, CaTronic, Чипсы с крiбом, justimatr, дори, Никитос, Герокс, Кречет Вертекс, Эмка, Иванчела</strong> За помощь в улучшении качества игры.</li>
-        <li><strong>Поддержка:</strong> За активное участие в сообществе.</li>
-      </ul>
+      <p>Мы хотим поблагодарить всех участников проекта за их вклад.</p>
     </section>
 
-    <!-- Раздел "Новости" -->
     <section id="news">
       <h2>Новости</h2>
-      <p>Здесь вы можете узнать последние обновления о проекте:</p>
-      <div class="social-links">
-        <a href="https://t.me/your_telegram_channel" target="_blank"><img src="assets/telegram.png" alt="Telegram" width="40"></a>
-        <a href="https://gamejolt.com/your_game_page" target="_blank"><img src="assets/gamejolt.png" alt="GameJolt" width="40"></a>
-        <a href="https://discord.gg/your_discord_invite" target="_blank"><img src="assets/discord.png" alt="Discord" width="40"></a>
-      </div>
+      <p>Следите за последними обновлениями и событиями!</p>
     </section>
   </main>
 
-  <!-- Футер -->
   <footer>
     <p>&copy; 2023 PvZ: Around the World. Все права защищены.</p>
   </footer>
