@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Новости - PvZ: Around the World</title>
+  <!-- Подключение Animate.css -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+  <style>
+    /* Общие стили */
+    body {
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #ccb07e, #d4b894);
+      color: #333;
+      text-align: center;
+      overflow-x: hidden;
+      background-attachment: fixed;
+    }
+
+    /* Навигационное меню */
+    nav {
+      background: linear-gradient(135deg, #666281, #4a4664);
+      padding: 10px 20px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 1.2em;
+      padding: 10px 15px;
+      border-radius: 10px;
+      transition: all 0.3s ease;
+    }
+
+    nav a:hover {
+      background: rgba(255, 255, 255, 0.2);
+      transform: scale(1.1);
+    }
+
+    header {
+      background: linear-gradient(135deg, #666281, #4a4664);
+      padding: 20px;
+      border-bottom: 5px solid #333;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header h1 {
+      font-size: 3em;
+      margin: 0;
+      color: white;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    }
+
+    header p {
+      font-size: 1.2em;
+      color: white;
+      margin-top: 10px;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    main {
+      padding: 20px;
+    }
+
+    .news-card {
+      background: rgba(255, 255, 255, 0.8);
+      margin: 20px auto;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      max-width: 800px;
+      text-align: left;
+      animation: fadeInCard 1s ease-in-out;
+    }
+
+    @keyframes fadeInCard {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .news-card h2 {
+      margin-top: 0;
+      color: #4a4664;
+    }
+
+    .news-card p {
+      line-height: 1.6;
+    }
+
+    footer {
+      background: linear-gradient(135deg, #666281, #4a4664);
+      padding: 10px;
+      border-top: 5px solid #333;
+      margin-top: 20px;
+    }
+
+    footer p {
+      margin: 0;
+      font-size: 0.9em;
+      color: white;
+    }
+
+    /* Адаптивный дизайн */
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+      }
+
+      .news-card {
+        padding: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Навигация -->
+  <nav>
+    <a href="index.html">Главная</a>
+    <a href="#news">Новости</a>
+    <a href="index.html#thanks">Отдельные благодарности</a>
+  </nav>
+
+  <!-- Шапка страницы -->
+  <header>
+    <h1 class="animate__animated animate__fadeInDown">Новости</h1>
+    <p>Последние обновления о проекте PvZ: Around the World!</p>
+  </header>
+
+  <!-- Основной контент -->
+  <main>
+    <!-- Карточка новости 1 -->
+    <div class="news-card animate__animated animate__fadeInUp">
+      <h2>Обновление 1.0.1</h2>
+      <p><strong>Дата:</strong> 15 октября 2023</p>
+      <p>Добавлены новые уровни в Европейской локации. Исправлены мелкие баги, связанные с производительностью.</p>
+    </div>
+
+    <!-- Карточка новости 2 -->
+    <div class="news-card animate__animated animate__fadeInUp">
+      <h2>Выпуск версии 1.0</h2>
+      <p><strong>Дата:</strong> 1 октября 2023</p>
+      <p>Мы рады объявить о выпуске первой версии игры! В ней доступны пять уникальных локаций, каждая со своими уникальными растениями и зомби.</p>
+    </div>
+
+    <!-- Карточка новости 3 -->
+    <div class="news-card animate__animated animate__fadeInUp">
+      <h2>Бета-тестирование завершено</h2>
+      <p><strong>Дата:</strong> 15 сентября 2023</p>
+      <p>Спасибо всем участникам бета-тестирования! Благодаря вашим отзывам мы смогли улучшить игру и подготовить её к официальному релизу.</p>
+    </div>
+  </main>
+
+  <!-- Футер -->
+  <footer>
+    <p>&copy; 2023 PvZ: Around the World. Все права защищены.</p>
+  </footer>
+
+  <!-- JavaScript для анимаций при скролле -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("animate__animated", "animate__fadeInUp");
+          }
+        });
+      });
+
+      document.querySelectorAll(".news-card").forEach((card) => {
+        observer.observe(card);
+      });
+    });
+  </script>
+</body>
+</html>
