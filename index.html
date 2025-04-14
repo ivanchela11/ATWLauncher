@@ -30,11 +30,11 @@
 
     .sun {
       position: absolute;
-      width: 50px;
-      height: 50px;
+      width: 40px;
+      height: 40px;
       background: radial-gradient(circle, #ffed47 50%, #fcb800 70%);
       border-radius: 50%;
-      animation: fall linear infinite;
+      animation: fall linear infinite, sway ease-in-out infinite;
     }
 
     @keyframes fall {
@@ -184,9 +184,8 @@
       const sun = document.createElement('div');
       sun.classList.add('sun');
       sun.style.left = Math.random() * 100 + 'vw';
-      sun.style.animationDuration = Math.random() * 3 + 2 + 's';
-      sun.style.animationDelay = Math.random() * 5 + 's';
-      sun.style.animationName = 'fall, sway';
+      sun.style.animationDuration = Math.random() * 5 + 3 + 's'; // Скорость падения
+      sun.style.animationDelay = Math.random() * 5 + 's'; // Задержка появления
       background.appendChild(sun);
     }
   </script>
